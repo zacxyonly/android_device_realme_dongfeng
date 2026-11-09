@@ -1,6 +1,6 @@
 [
   {
-    "repository": "vendor_realme_dongfeng",
+    "repository": "android_vendor_realme_dongfeng",
     "target_path": "vendor/realme/dongfeng"
   },
   {
