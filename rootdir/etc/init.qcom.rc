@@ -1,0 +1,65 @@
+#
+# Copyright (c) 2026 The LineageOS Project
+#
+# Init RC for Qualcomm SM6650 (dongfeng)
+#
+
+on early-init
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+
+on init
+    # Schedutil rate limits
+    write /sys/devices/system/cpu/cpufreq/schedutil/up_rate_limit_us 500
+    write /sys/devices/system/cpu/cpufreq/schedutil/down_rate_limit_us 20000
+
+    # Fast charging & battery
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chmod 0660 /sys/class/power_supply/battery/charging_enabled
+
+on fs
+    mount_all /vendor/etc/fstab.qcom --early
+
+on late-fs
+    mount_all /vendor/etc/fstab.qcom --late
+
+on post-fs-data
+    # Fingerprint
+    mkdir /data/vendor/fingerprint 0770 system system
+    mkdir /mnt/vendor/persist/fingerprint 0770 system system
+
+    # Sensors
+    mkdir /data/vendor/sensors 0775 root system
+    mkdir /data/vendor/sensors/registry 0775 root system
+
+    # Audio
+    mkdir /data/vendor/audio 0770 audio audio
+
+on boot
+    # Display backlight permissions
+    chown system system /sys/class/backlight/panel0-backlight/brightness
+    chown system system /sys/class/backlight/panel0-backlight/max_brightness
+    chmod 0664 /sys/class/backlight/panel0-backlight/brightness
+
+    # Touchscreen gesture & high touch rate
+    chown system system /proc/touchpanel/game_switch_enable
+    chown system system /proc/touchpanel/oplus_tp_limit_enable
+    chown system system /proc/touchpanel/oplus_tp_direction
+    chmod 0660 /proc/touchpanel/game_switch_enable
+    chmod 0660 /proc/touchpanel/oplus_tp_limit_enable
+    chmod 0660 /proc/touchpanel/oplus_tp_direction
+
+    # Bluetooth
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+
+# USB Configuration
+on property:sys.usb.config=adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idProduct 0x9015
+
+on property:sys.usb.config=mtp && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idProduct 0x9039
+
+on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
+    write /config/usb_gadget/g1/idProduct 0x903a

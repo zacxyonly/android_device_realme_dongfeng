@@ -1,0 +1,6 @@
+#
+# ODM Properties for Realme P3 5G (dongfeng)
+#
+
+ro.odm.build.version.release=14
+ro.vendor.oplus.market.name=Realme P3 5G

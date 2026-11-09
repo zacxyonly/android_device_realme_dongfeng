@@ -1,0 +1,2 @@
+# Fingerprint & Sensors AIDL
+android.hardware.biometrics.fingerprint.IFingerprint/default    u:object_r:hal_fingerprint_service:s0

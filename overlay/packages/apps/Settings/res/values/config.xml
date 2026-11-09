@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2026 The LineageOS Project
+**
+** SPDX-License-Identifier: Apache-2.0
+*/
+-->
+<resources>
+    <!-- Show 5G in network mode selection -->
+    <bool name="config_show_5g_slice">true</bool>
+
+    <!-- Fingerprint location (in-display optical / side-mounted) -->
+    <string name="config_fingerprint_udfps_path" translatable="false">/sys/kernel/oplus_display/notify_fppress</string>
+</resources>

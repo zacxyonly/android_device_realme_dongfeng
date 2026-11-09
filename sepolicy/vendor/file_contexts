@@ -1,0 +1,9 @@
+# Backlight sysfs
+/sys/class/backlight/panel0-backlight(/.*)?    u:object_r:sysfs_graphics:s0
+
+# Fingerprint proc / sysfs
+/proc/touchpanel(/.*)?                         u:object_r:proc_touchpanel:s0
+/sys/kernel/oplus_display(/.*)?                u:object_r:sysfs_graphics:s0
+
+# Thermal
+/vendor/etc/thermal-engine\.conf               u:object_r:thermal_engine_config_file:s0

@@ -1,0 +1,10 @@
+[
+  {
+    "repository": "vendor_realme_dongfeng",
+    "target_path": "vendor/realme/dongfeng"
+  },
+  {
+    "repository": "zerobyte-kernel",
+    "target_path": "kernel/realme/sm6650"
+  }
+]

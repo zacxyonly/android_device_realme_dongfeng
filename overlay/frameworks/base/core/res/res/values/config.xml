@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright (C) 2026 The LineageOS Project
+**
+** SPDX-License-Identifier: Apache-2.0
+*/
+-->
+<resources>
+    <!-- Flag indicating whether the device supports 5G -->
+    <bool name="config_has5gMobileData">true</bool>
+
+    <!-- Quick settings tiles columns -->
+    <integer name="config_quickSettingsNumColumns">2</integer>
+
+    <!-- Default refresh rate in the device (120Hz peak) -->
+    <integer name="config_defaultRefreshRate">120</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
+
+    <!-- Supported refresh rates -->
+    <array name="config_supportedRefreshRates">
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </array>
+
+    <!-- Display cutouts (Punch hole center) -->
+    <string name="config_mainBuiltInDisplayCutout" translatable="false">
+        M -28,0
+        A 28,28 0 1 0 28,0
+        A 28,28 0 1 0 -28,0
+        Z
+        @left
+    </string>
+
+    <!-- Screen brightness settings (4095 scale) -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+    <integer name="config_screenBrightnessSettingMaximum">4095</integer>
+    <integer name="config_screenBrightnessSettingDefault">1024</integer>
+    <integer name="config_screenBrightnessDim">10</integer>
+
+    <!-- Auto brightness sensor -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Power profile & battery capacity (5000 mAh) -->
+    <integer name="config_criticalBatteryWarningLevel">5</integer>
+    <integer name="config_lowBatteryWarningLevel">15</integer>
+
+    <!-- Haptic feedback vibration durations -->
+    <integer-array name="config_defaultNotificationVibePattern">
+        <item>0</item>
+        <item>180</item>
+        <item>80</item>
+        <item>180</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,13 @@
+#
+# Product Properties for Realme P3 5G (dongfeng)
+#
+
+# Device Display Metadata
+ro.product.display=Realme P3 5G
+ro.product.device=dongfeng
+ro.product.model=RMX5079
+ro.product.brand=realme
+ro.product.manufacturer=realme
+
+# Display cutout & refresh rate UI
+ro.surface_flinger.protected_contents=true

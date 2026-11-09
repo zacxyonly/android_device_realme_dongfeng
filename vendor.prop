@@ -1,0 +1,30 @@
+#
+# Vendor Properties for Realme P3 5G (dongfeng)
+#
+
+# Dynamic Partitions & Storage
+ro.boot.dynamic_partitions=true
+ro.carrier=unknown
+
+# Qualcomm Board Platform
+ro.soc.manufacturer=QTI
+ro.soc.model=SM6650
+
+# Gatekeeper & Security
+vendor.gatekeeper.disable_spu=true
+ro.crypto.allow_encrypt_override=true
+
+# USB & Charging
+vendor.usb.use_ffs_mtp=1
+ro.charger.enable_suspend=1
+
+# Display / Adreno
+vendor.display.enable_null_display=0
+debug.sf.high_fps_late_app_phase_offset_ns=1000000
+debug.sf.high_fps_late_sf_phase_offset_ns=1000000
+
+# Radio / RIL
+persist.vendor.radio.custom_ecc=1
+persist.vendor.radio.sib16_support=1
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.relay_oprt_change=1
